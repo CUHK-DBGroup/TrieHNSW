@@ -1567,9 +1567,9 @@ public:
 
             int cntM = 0;
             for(int i = 0; i <= max_layer[curNodeNum]; i++) {
+                if(belong[curNodeNum][i] == nullptr) continue;
+                if(!(belong[curNodeNum][i]->flag==tag2)) continue;
                 int *data = (int *) get_linklist(curNodeNum, i, 0);
-
-
                 size_t size = getListCount((linklistsizeint *) data);
                 tableint *datal = (tableint *) (data + 1);
 #ifdef USE_SSE
